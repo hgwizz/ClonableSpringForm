@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title></title>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+		<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+		<script defer src="js/duplicateSpringForm.js"></script>
+	</head>
+	<script>
+		$(function() {
+			 $(".add").on('click', function(event) {
+			 	$(this).duplicateDiv();
+			 	event.preventDefault();
+			 });
+
+			 $(".remove").on('click', function(event) {
+			 	$(this).removeDuplicate();
+			 	event.preventDefault();
+			 });
+		});
+	</script>
+	<body>
+		<div class="container-fluid custom">
+			<div class="row clonable">
+				<div class="col-sm gg">
+					<label for="nombre[0]">Nombre</label>
+					<input class="form-control" id="nombre[0]" placeholder="Nombre" name="nombre[0]" type="text">
+				</div>
+				<div class="col-sm">
+					<label for="state">Ciudad</label>
+					<select class="custom-select d-block w-100" id="state" required="">
+						<option value="">Choose...</option>
+						<option>Santiago</option>
+					</select>
+					<div class="invalid-feedback">
+						Please provide a valid state.
+					</div>
+				</div>
+				<div class="col-sm">
+					<button class="btn btn-secondary add" type="button"><i class="fas fa-plus"></i></button>
+					<button class="btn btn-secondary remove" type="button"><i class="fas fa-minus"></i></button>
+				</div>
+			</div>
+		</body>
+	</html>
